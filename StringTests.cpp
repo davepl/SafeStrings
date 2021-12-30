@@ -5,7 +5,7 @@
 // Provided under the GPL Gnu Public License 2.0
 // 
 // This code is intended to accompany the "Safe C String" video.  It demonstrates
-// how to replace older usafe string functions that lack bounds and buffer checks
+// how to replace older unsafe string functions that lack bounds and buffer checks
 // with more modern replacements intended for a hostile world.
 // 
 //  String Function Replacement Cheat Sheet
@@ -69,7 +69,7 @@ int main(int argc, char * argv [])
 
     int length1 = strnlen_s(szLongString, sizeof szLongString);
 
-    // Quick test to confirm that passind null is ok
+    // Quick test to confirm that passing null is ok
 
     assert(0 == strnlen_s(nullptr, RSIZE_MAX));
 
@@ -207,7 +207,7 @@ void TestVarArgs(char * buffer, size_t cb, const char* format, ...)
 }
 
 // I don't normally do the Unicode dance anymore, but dealing with
-// Microsoft proprietary stuff, I do it thierway, like so:
+// Microsoft proprietary stuff, I do it their way, like so:
 
 void OurParameterValidationFailureHandler(
     const wchar_t * expression,
